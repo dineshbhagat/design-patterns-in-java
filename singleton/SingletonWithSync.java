@@ -36,3 +36,55 @@ class MySingleton {
 /*
 Thread-9 : instantiates object
 */
+
+/*
+class MySingleton {
+
+    private MySingleton() {
+    }
+
+    private static MySingleton ourInstance;
+
+    public static MySingleton getInstance() {
+        if (ourInstance == null) {
+            synchronized (MySingleton.class) {
+                System.out.println(Thread.currentThread().getName() + " : instantiates object");
+                ourInstance = new MySingleton();
+            }
+        }
+        return ourInstance;
+    }
+}
+//output: If you miss and second level null check
+//Thread-0 : instantiates object
+//Thread-1 : instantiates object
+//Thread-3 : instantiates object
+//Thread-4 : instantiates object
+//Thread-2 : instantiates object
+*/
+
+/*
+class MySingleton {
+
+    private MySingleton() {
+    }
+
+    private static MySingleton ourInstance;
+
+    public static MySingleton getInstance() {
+        if (ourInstance == null) {
+            synchronized (MySingleton.class) {
+                if (ourInstance == null) {
+                    System.out.println(Thread.currentThread().getName() + " : instantiates object");
+                    ourInstance = new MySingleton();
+                }
+            }
+        }
+        return ourInstance;
+    }
+}
+
+// output: with Double-Checked locking, but this solution is discouraged recently 
+// Thread-7 : instantiates object
+
+*/
