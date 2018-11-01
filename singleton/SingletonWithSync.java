@@ -17,7 +17,7 @@ public class SingletonWithSync {
         }
     }
 }
-
+// type-1
 class MySingleton {
 
     private MySingleton() {}
@@ -38,6 +38,7 @@ Thread-9 : instantiates object
 */
 
 /*
+// type-2
 class MySingleton {
 
     private MySingleton() {
@@ -64,6 +65,7 @@ class MySingleton {
 */
 
 /*
+// type-3
 class MySingleton {
 
     private MySingleton() {
