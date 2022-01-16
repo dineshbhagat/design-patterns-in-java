@@ -1,5 +1,7 @@
 ### Bytecode of class without synchronized method
 
+Did not tried but can we try to create a new Singleton class and add method dynamically using [byteBuddy](https://github.com/raphw/byte-buddy#hello-world)?
+
 Compiled from "MySingleton1.java"
 ```shell
 javap -v MySingleton1
